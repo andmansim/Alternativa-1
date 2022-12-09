@@ -11,3 +11,8 @@ Conseguimos el Dataset de Auto MPG que contiene datos del consumo de combustible
 5.1.7 Saca el mismo gráfico que dibujaste en el ejercicio 5.1.5, esta vez solamente para los coches fabricados en el año 80. ¿Cuáles son las diferencias más destacables entre las relaciones dibujadas del año 70 y del año 80?
 
 '''
+#5.1.1
+import pandas as pd
+
+df = pd.read_csv('auto-mpg.csv')
+print(df.head)
