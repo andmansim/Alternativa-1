@@ -130,7 +130,14 @@ mediana_size = df.groupby('size').median()
 print('\nMediana de size\n')
 print(mediana_size)
 
-#5.2.5 Dibuja una gráfica que muestre para cada grupo de personas servidas en el restaurante, el promedio de las propinas pagadas.
+#5.2.5 Dibuja una gráfica que muestre para cada grupo de personas servidas en el restaurante, 
+# el promedio de las propinas pagadas.
+
+fig, ax1 = plt.subplots(figsize=(7,4))
+ax1.bar(mediana_size.index ,mediana_size['total_bill'])
+plt.xlabel('Promedio propinas de cada grupo')
+plt.show()
+
 #5.2.6 Dibuja una gráfica que muestre la relación entre las variables del dataset, pintando los datos según las siguientes variables:
 
 'sex'
