@@ -60,9 +60,14 @@ print(df.isnull().sum())
 a = df.groupby('sex')['tip'].sum()
 print(a)
 print(a.sum())
-#print(a.columns)
-sns.countplot(x = 'tip', hue = 'sex', data = df)
-plt.xlabel('Sex')
+b = round(a.Female/a.sum() * 100, 2) 
+b1 = round(a.Male/a.sum() * 100, 2) 
+print(a.Female)
+c = [b, b1]
+fig, ax = plt.subplots(figsize=(7,4))
+ax.bar(a.index ,c)
+
+plt.xlabel(str(b)+'%')
 plt.ylabel('Tips')
 plt.show()
 
