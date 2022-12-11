@@ -75,14 +75,22 @@ mapa_corr(df)
 # pintando los puntos del gráfico según el número de cilindros.
 print('\nDiagrama de dispersón peso, potencia--------------------------------------------\n')
 #a = df.groupby('cylinders').sum()
-plt.scatter(x =df.cylinders, y = df.weight, color = 'red')
-plt.scatter(x =df.cylinders, y = df.horsepower, color = 'green')
+plt.scatter(x =df.cylinders, y = df.weight/10, color = 'red', marker = '*', label = 'weight/10')#Se divide entre 10 para qwue estén más juntas las escalas
+plt.scatter(x =df.cylinders, y = df.horsepower, color = 'green', marker = '^', label = 'horsepower')
 plt.title('Diagrama dispersión peso-potencia')
 plt.xlabel('Cylinder')
 plt.ylabel('Weight, Horsepower')
 plt.show()
+
 #5.1.5 Dibuja un diagrama de dispersión entre el peso y la potencia, pintando los puntos del gráfico según el año de fabricación. 
 # Comparando este nuevo gráfico con el anterior, ¿podemos decir qué criterio tiene más capacidad para agrupar los coches o mejor dicho es un factor discriminatorio mayor que el otro?
+plt.scatter(x =df['model year'], y = df.weight/10, color = 'red', marker = '*', label = 'weight/10')#Se divide entre 10 para qwue estén más juntas las escalas
+plt.scatter(x =df['model year'], y = df.horsepower, color = 'green', marker = '^', label = 'horsepower')
+plt.title('Diagrama dispersión peso-potencia')
+plt.xlabel('Model year')
+plt.ylabel('Weight, Horsepower')
+plt.show()
+
 
 #5.1.6 Saca el mismo gráfico que dibujaste en el ejercicio 5.1.5, esta vez solamente para los coches fabricados en el año 70.
 
