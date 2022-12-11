@@ -96,34 +96,39 @@ plt.show()
 #Comparando ambos gráficos podemos ver que el primero se agrupa principalmente en 3 cilindradas(4,6,8), 
 # en cambio en el segundo está más repartido por los años
 
-#5.1.6 Saca el mismo gráfico que dibujaste en el ejercicio 5.1.5, esta vez solamente para los coches fabricados en el año 70.
-'''df['horse_model'] = 0
-df['weight_model'] = 0
-df['model_70'] = 0'''
+#5.1.6 Saca el mismo gráfico que dibujaste en el ejercicio 5.1.5, esta vez solamente para los coches fabricados 
+# en el año 70.
 
-horse = []
-weight = []
-year = []
-for i in range(len(df)):
-    if df['model year'][i] == 70:
-        '''df['model_70'][i] = df['model year'][i]
-        df['horse_model'][i] = df['horsepower'][i]
-        df['weight_model'][i] = df['weight'][i]'''
-        horse.append(df['horsepower'][i])
-        weight.append(df['weight'][i])
-        year.append(df['model year'][i])
+def filtrar(df, año):
+    h = []
+    w = []
+    y = []
+    for i in range(len(df)):
+        if df['model year'][i] == año:
+            
+            horse.append(df['horsepower'][i])
+            weight.append(df['weight'][i])
+            year.append(df['model year'][i])
+    return y, h, w
         
-'''print(df['horse_model'])
-print(df['weight_model'])'''
-'''plt.scatter(x = df['model_70'], y = df['weight_model']/10, color = 'red', marker = '*', label = 'weight/10')#Se divide entre 10 para que estén más juntas las escalas
-plt.scatter(x =df['model_70'], y = df['horse_model'], color = 'green', marker = '^', label = 'horsepower')'''
-plt.scatter(x = year, y = weight/10, color = 'red', marker = '*', label = 'weight/10')#Se divide entre 10 para que estén más juntas las escalas
+year, horse, weight = filtrar(df, 70)
+plt.scatter(x = year, y = weight, color = 'red', marker = '*', label = 'weight/10')#Se divide entre 10 para que estén más juntas las escalas
 plt.scatter(x =year, y = horse, color = 'green', marker = '^', label = 'horsepower')
-plt.title('Diagrama dispersión peso-potencia respecto model year')
+plt.title('Diagrama dispersión peso-potencia respecto años 70')
 plt.xlabel('Model year')
 plt.ylabel('Weight, Horsepower')
 plt.show()
 
 
-#5.1.7 Saca el mismo gráfico que dibujaste en el ejercicio 5.1.5, esta vez solamente para los coches fabricados en el año 80. 
+#5.1.7 Saca el mismo gráfico que dibujaste en el ejercicio 5.1.5, esta vez solamente para los coches 
+# fabricados en el año 80. 
 # ¿Cuáles son las diferencias más destacables entre las relaciones dibujadas del año 70 y del año 80?
+
+year, horse, weight = filtrar(df, 80)
+
+plt.scatter(x = year, y = weight, color = 'red', marker = '*', label = 'weight/10')#Se divide entre 10 para que estén más juntas las escalas
+plt.scatter(x =year, y = horse, color = 'green', marker = '^', label = 'horsepower')
+plt.title('Diagrama dispersión peso-potencia respecto años 70')
+plt.xlabel('Model year')
+plt.ylabel('Weight, Horsepower')
+plt.show()
