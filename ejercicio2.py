@@ -168,6 +168,11 @@ representar1(df, 'size', 'sex')
 #5.2.8 Calcula el tercer cuartil para la variable 'tip' y filtra todo el dataset según este valor para que el 
 # DataFrame resultante solamente contenga valores iguales o mayores que esa cantidad de propinas.
 
+q3 = round(df.tip.quantile(.75), 2)
+print(q3)
+df1 = df[df['tip']>= q3]
+df1.reset_index(inplace = True)
+print(df1.head())
 
 
 #5.2.9 Dibuja los histogramas que se pueden obtener para las siguientes variables del dataset obtenido en el paso 
