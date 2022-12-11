@@ -46,9 +46,13 @@ print(df.info())
 print('\nColumnas del df\n')
 print(df.columns)
 print('\nDescripción básica del df\n')
-print(df.describe)
+print(df.describe())
 
 #5.2.2 Comprueba si hay valores perdidods en el dataset y si fuera así en qué registros existen estos valores.
+print('\nValores nulos\n')
+print(df.isnull().sum())
+#Como podemos ver, en principio no hay ningún valor nulo
+
 
 #5.2.3 Clacula qué porcentaje de los clientes que dan propina son hombres y qué porcentaje son mujeres?
 #5.2.4 Agrupa los datos según estas variables, calculando el tamaño, la mediana y la media para cada grupo:
