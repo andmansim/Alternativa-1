@@ -11,7 +11,7 @@ Conseguimos el Dataset de Auto MPG que contiene datos del consumo de combustible
 5.1.7 Saca el mismo gráfico que dibujaste en el ejercicio 5.1.5, esta vez solamente para los coches fabricados en el año 80. ¿Cuáles son las diferencias más destacables entre las relaciones dibujadas del año 70 y del año 80?
 
 '''
-#5.1.1
+#5.1.1 Dibuja una gráfica que muestre la relación entre las variables del dataset.
 import pandas as pd
 import pylab as plt
 import seaborn as sns
@@ -56,11 +56,24 @@ def mapa_corr(df):
     plt.show()
 mapa_corr(df)
 
-#5.1.2
+#5.1.2 ¿Entre qué conjunto de variables se puede considerar que hay una relación?
 #Para que sean linealmente dependientes unas variables de otras, su correlación debe ser de 1 o -1. 
 #Los datos que más se aproximan a ellos son: cylinders - weight , cylinders - splacement, weight - splacement, splacement - mpg, clinders - mpg, mpg - weight 
 
-#5.1.3
+#5.1.3 Calcula el coeficiente de correlación entre las variables del dataset y dibújalos en una gráfica. 
+# Modifica la respuesta del paso anterior si lo consideras necesario según los coeficientes calculados.
 print(df.corr())
 mapa_corr(df)
 #No hace falta modificar la relación que he dicho antes, dado que me he basado en la matriz de correlación, al ser la mejor gráfica para representar la relación entre todas las variables numéricas
+
+#5.1.4 Dibuja un diagrama de dispersión entre el peso y la potencia, 
+# pintando los puntos del gráfico según el número de cilindros.
+
+
+#5.1.5 Dibuja un diagrama de dispersión entre el peso y la potencia, pintando los puntos del gráfico según el año de fabricación. 
+# Comparando este nuevo gráfico con el anterior, ¿podemos decir qué criterio tiene más capacidad para agrupar los coches o mejor dicho es un factor discriminatorio mayor que el otro?
+
+#5.1.6 Saca el mismo gráfico que dibujaste en el ejercicio 5.1.5, esta vez solamente para los coches fabricados en el año 70.
+
+#5.1.7 Saca el mismo gráfico que dibujaste en el ejercicio 5.1.5, esta vez solamente para los coches fabricados en el año 80. 
+# ¿Cuáles son las diferencias más destacables entre las relaciones dibujadas del año 70 y del año 80?
