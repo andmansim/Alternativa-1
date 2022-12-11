@@ -60,10 +60,12 @@ print(df.isnull().sum())
 a = df.groupby('sex')['tip'].sum()
 print(a)
 print(a.sum())
-plt.bar(df.sex, a)
+#print(a.columns)
+sns.countplot(x = 'tip', hue = 'sex', data = df)
 plt.xlabel('Sex')
 plt.ylabel('Tips')
 plt.show()
+
 #5.2.4 Agrupa los datos según estas variables, calculando el tamaño, la mediana y la media para cada grupo:
 
 'sex'
