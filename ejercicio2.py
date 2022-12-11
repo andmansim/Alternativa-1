@@ -58,17 +58,12 @@ print(df.isnull().sum())
 
 #5.2.3 Clacula qué porcentaje de los clientes que dan propina son hombres y qué porcentaje son mujeres?
 a = df.groupby('sex')['tip'].sum()
-print(a)
-print(a.sum())
-b = round(a.Female/a.sum() * 100, 2) 
-b1 = round(a.Male/a.sum() * 100, 2) 
-print(a.Female)
+b = round(a.Female/a.sum() * 100, 2) #Porcieto de propina mujeres
+b1 = round(a.Male/a.sum() * 100, 2) #Porcieto de propina mujeres
 c = [b, b1]
 fig, ax = plt.subplots(figsize=(7,4))
 ax.bar(a.index ,c)
-
-plt.xlabel(str(b)+'%')
-plt.ylabel('Tips')
+plt.xlabel('Female:' + str(b)+'%   Male:' +str(b1)+'%')
 plt.show()
 
 #5.2.4 Agrupa los datos según estas variables, calculando el tamaño, la mediana y la media para cada grupo:
