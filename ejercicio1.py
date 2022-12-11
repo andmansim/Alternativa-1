@@ -34,8 +34,9 @@ for i in range(len(df)):
 print(df.info())
 df = df.drop('car name', axis= 1)
 
+#mapa de correlación, este muestra la relación entre las variables
 def mapa_corr(df):
-    plt.figure(figsize=(15, 10))
+    plt.figure(figsize=(7, 7))
 
     sns.set(style='white')
 
@@ -52,4 +53,9 @@ def mapa_corr(df):
               annot=True,
               linewidths=0.5,
               cbar_kws={'shrink': 0.5})
+    plt.show()
 mapa_corr(df)
+
+#5.1.2
+#Para que sean linealmente dependientes unas variables de otras, su correlación debe ser de 1 o -1. 
+#Los datos que más se aproximan a ellos son: cylinders - weight , cylinders - splacement, weight - splacement, splacement - mpg, clinders - mpg, mpg - weight 
