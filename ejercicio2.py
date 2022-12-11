@@ -133,19 +133,27 @@ ax1.bar(mediana_size.index ,mediana_size['total_bill'])
 plt.xlabel('Promedio propinas de cada grupo')
 plt.show()
 
-#5.2.6 Dibuja una gráfica que muestre la relación entre las variables del dataset, pintando los datos según las siguientes variables:
+#5.2.6 Dibuja una gráfica que muestre la relación entre las variables del dataset, 
+# pintando los datos según las siguientes variables:
+'sex''smoker''day''time''size'
 
-'sex'
-'smoker'
-'day'
-'time'
-'size'
-#5.2.7 Teniendo en cuenta todos los calculos realizados sobre este dataset y las gráficas dibujadas anteriormente, ¿cuáles serían los factores diferenciadores que más afectan a la cantidad de las proponia recibidas por el camarero?
-#5.2.8 Calcula el tercer cuartil para la variable 'tip' y filtra todo el dataset según este valor para que el DataFrame resultante solamente contenga valores iguales o mayores que esa cantidad de propinas.
-#5.2.9 Dibuja los histogramas que se pueden obtener para las siguientes variables del dataset obtenido en el paso anterior:
 
-'smoker'
-'day'
-'time'
-'size'
-#5.2.10 Considerando todo el análisis realizado anteriormente, haz una recomendación al camarero para que lo tenga en cuenta a la hora de repartir los clientes entre el personal del restaurante, y muestra que de esa manera él puede conseguir mayor cantidad de proponas!!
+#5.2.7 Teniendo en cuenta todos los calculos realizados sobre este dataset y las gráficas dibujadas anteriormente, 
+# ¿cuáles serían los factores diferenciadores que más afectan a la cantidad de las proponia recibidas por el 
+# camarero?
+
+
+
+#5.2.8 Calcula el tercer cuartil para la variable 'tip' y filtra todo el dataset según este valor para que el 
+# DataFrame resultante solamente contenga valores iguales o mayores que esa cantidad de propinas.
+
+
+
+#5.2.9 Dibuja los histogramas que se pueden obtener para las siguientes variables del dataset obtenido en el paso 
+# anterior:
+'smoker''day''time''size'
+
+
+#5.2.10 Considerando todo el análisis realizado anteriormente, haz una recomendación al camarero para que lo 
+# tenga en cuenta a la hora de repartir los clientes entre el personal del restaurante, y muestra que de esa manera 
+# él puede conseguir mayor cantidad de proponas!!
