@@ -97,7 +97,8 @@ plt.show()
 # en cambio en el segundo está más repartido por los años
 
 #5.1.6 Saca el mismo gráfico que dibujaste en el ejercicio 5.1.5, esta vez solamente para los coches fabricados en el año 70.
-
+df['horse_model'] = 0
+df['weight_model'] = 0
 for i in range(len(df)):
     if df['model year'][i] == 70:
         df['horse_model'][i] = df['horsepower'][i]
