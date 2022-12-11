@@ -37,6 +37,8 @@ para no fumadores a los clientes que así lo solicitaban.
 
 '''
 import pandas as pd
+import pylab as plt
+import seaborn as sns 
 #5.2.1 Saca todas las estadísticas principales de las variables del dataset.
 
 df = pd.read_csv('tips.csv')
@@ -55,6 +57,13 @@ print(df.isnull().sum())
 
 
 #5.2.3 Clacula qué porcentaje de los clientes que dan propina son hombres y qué porcentaje son mujeres?
+a = df.groupby('sex')['tip'].sum()
+print(a)
+print(a.sum())
+plt.bar(df.sex, a)
+plt.xlabel('Sex')
+plt.ylabel('Tips')
+plt.show()
 #5.2.4 Agrupa los datos según estas variables, calculando el tamaño, la mediana y la media para cada grupo:
 
 'sex'
