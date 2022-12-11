@@ -180,7 +180,7 @@ print(df1.head())
 'smoker''day''time''size'
 def histo(df, parametro):
     fig, ax = plt.subplots(figsize=(7,4))
-    ax.bar(df1['tip'] ,df1[parametro])
+    ax.bar(df1[parametro], df1['tip'])
     plt.xlabel(f'Histograma tip con {parametro}')
     plt.show()
 histo(df, 'smoker')
