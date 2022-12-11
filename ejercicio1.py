@@ -21,6 +21,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 df = pd.read_csv('auto-mpg.csv')
+print('Infomación del csv')
 print(df.head)
 print(df.info())
 df_copia = df.copy()
@@ -31,13 +32,14 @@ for i in range(len(df)):
     else:
         df.horsepower[i] = 0
 
+print('\nCambio de tipo de la columna horsepower')
 print(df.info())
 df = df.drop('car name', axis= 1)
 
 #mapa de correlación, este muestra la relación entre las variables
 def mapa_corr(df):
     plt.figure(figsize=(7, 7))
-
+    plt.title('Mapa de correalción')
     sns.set(style='white')
 
     mask=np.triu(np.ones_like(df.corr(), dtype=bool))
@@ -62,14 +64,16 @@ mapa_corr(df)
 
 #5.1.3 Calcula el coeficiente de correlación entre las variables del dataset y dibújalos en una gráfica. 
 # Modifica la respuesta del paso anterior si lo consideras necesario según los coeficientes calculados.
+print('\n5.1.3, matriz de correlación')
 print(df.corr())
 mapa_corr(df)
 #No hace falta modificar la relación que he dicho antes, dado que me he basado en la matriz de correlación, al ser la mejor gráfica para representar la relación entre todas las variables numéricas
 
+
 #5.1.4 Dibuja un diagrama de dispersión entre el peso y la potencia, 
 # pintando los puntos del gráfico según el número de cilindros.
-
-
+print('\nDiagrama de dispersón peso, potencia')
+plt.scatter(x =df.horsepower, y = df.weight)
 #5.1.5 Dibuja un diagrama de dispersión entre el peso y la potencia, pintando los puntos del gráfico según el año de fabricación. 
 # Comparando este nuevo gráfico con el anterior, ¿podemos decir qué criterio tiene más capacidad para agrupar los coches o mejor dicho es un factor discriminatorio mayor que el otro?
 
