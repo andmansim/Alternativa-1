@@ -16,3 +16,32 @@ import pandas as pd
 
 df = pd.read_csv('auto-mpg.csv')
 print(df.head)
+print(df.info())
+
+#transformamos los datos de la columna horsepower de str a int
+'''for i in range(len(df)):
+    print(type(df.horsepower[i]))
+    df.horsepower[i]= float(df.horsepower[i])'''
+
+print(df.horsepower[1])
+df = pd.get_dummies(df, drop_first = True)
+print(df.info())
+'''def mapa_corr(websites):
+    plt.figure(figsize=(15, 10))
+
+    sns.set(style='white')
+
+    mask=np.triu(np.ones_like(websites.corr(), dtype=bool))
+
+    cmap=sns.diverging_palette(0, 10, as_cmap=True)
+
+
+    sns.heatmap(websites.corr(),
+               mask=mask,
+              cmap=cmap,
+              center=0,
+              square=True,
+              annot=True,
+              linewidths=0.5,
+              cbar_kws={'shrink': 0.5})
+mapa_corr(websites)'''
