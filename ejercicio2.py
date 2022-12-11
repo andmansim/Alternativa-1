@@ -178,7 +178,15 @@ print(df1.head())
 #5.2.9 Dibuja los histogramas que se pueden obtener para las siguientes variables del dataset obtenido en el paso 
 # anterior:
 'smoker''day''time''size'
-
+def histo(df, parametro):
+    fig, ax = plt.subplots(figsize=(7,4))
+    ax.bar(df1['tip'] ,df1[parametro])
+    plt.xlabel(f'Histograma tip con {parametro}')
+    plt.show()
+histo(df, 'smoker')
+histo(df, 'day')
+histo(df, 'time')
+histo(df, 'size')
 
 #5.2.10 Considerando todo el análisis realizado anteriormente, haz una recomendación al camarero para que lo 
 # tenga en cuenta a la hora de repartir los clientes entre el personal del restaurante, y muestra que de esa manera 
