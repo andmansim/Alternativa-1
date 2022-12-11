@@ -67,12 +67,18 @@ plt.xlabel('Female:' + str(b)+'%   Male:' +str(b1)+'%')
 plt.show()
 
 #5.2.4 Agrupa los datos según estas variables, calculando el tamaño, la mediana y la media para cada grupo:
+'sex''smoker''day''time''size'
+sex = df.groupby('sex').sum()
+print(sex)
+smoker = df.groupby('smoker').sum()
+print(smoker)
+day = df.groupby('day').sum()
+print(day)
+time = df.groupby('time').sum()
+print(time)
+size = df.groupby('size').sum()
+print(size)
 
-'sex'
-'smoker'
-'day'
-'time'
-'size'
 #5.2.5 Dibuja una gráfica que muestre para cada grupo de personas servidas en el restaurante, el promedio de las propinas pagadas.
 #5.2.6 Dibuja una gráfica que muestre la relación entre las variables del dataset, pintando los datos según las siguientes variables:
 
