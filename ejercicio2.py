@@ -36,10 +36,17 @@ para no fumadores a los clientes que así lo solicitaban.
 5.2.10 Considerando todo el análisis realizado anteriormente, haz una recomendación al camarero para que lo tenga en cuenta a la hora de repartir los clientes entre el personal del restaurante, y muestra que de esa manera él puede conseguir mayor cantidad de proponas!!
 
 '''
-
+import pandas as pd
 #5.2.1 Saca todas las estadísticas principales de las variables del dataset.
 
-
+df = pd.read_csv('tips.csv')
+print(df.head())
+print('\nInfromación del df\n')
+print(df.info())
+print('\nColumnas del df\n')
+print(df.columns)
+print('\nDescripción básica del df\n')
+print(df.describe)
 
 #5.2.2 Comprueba si hay valores perdidods en el dataset y si fuera así en qué registros existen estos valores.
 
