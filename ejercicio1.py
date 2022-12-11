@@ -105,17 +105,17 @@ def filtrar(df, año):
     y = []
     for i in range(len(df)):
         if df['model year'][i] == año:
-            
-            horse.append(df['horsepower'][i])
-            weight.append(df['weight'][i])
-            year.append(df['model year'][i])
+            h.append(df['horsepower'][i])
+            w.append(df['weight'][i])
+            y.append(df['model year'][i])
     return y, h, w
         
 year, horse, weight = filtrar(df, 70)
-plt.scatter(x = year, y = weight, color = 'red', marker = '*', label = 'weight/10')#Se divide entre 10 para que estén más juntas las escalas
+weight2 = list(map(lambda x: x / 10, weight))
+plt.scatter(x = year, y = weight2, color = 'red', marker = '*', label = 'weight')#Se divide entre 10 para que estén más juntas las escalas
 plt.scatter(x =year, y = horse, color = 'green', marker = '^', label = 'horsepower')
 plt.title('Diagrama dispersión peso-potencia respecto años 70')
-plt.xlabel('Model year')
+plt.xlabel('Model year 70')
 plt.ylabel('Weight, Horsepower')
 plt.show()
 
@@ -125,10 +125,15 @@ plt.show()
 # ¿Cuáles son las diferencias más destacables entre las relaciones dibujadas del año 70 y del año 80?
 
 year, horse, weight = filtrar(df, 80)
-
-plt.scatter(x = year, y = weight, color = 'red', marker = '*', label = 'weight/10')#Se divide entre 10 para que estén más juntas las escalas
+weight3 = list(map(lambda x: x / 10, weight))
+plt.scatter(x = year, y = weight3, color = 'red', marker = '*', label = 'weight')#Se divide entre 10 para que estén más juntas las escalas
 plt.scatter(x =year, y = horse, color = 'green', marker = '^', label = 'horsepower')
-plt.title('Diagrama dispersión peso-potencia respecto años 70')
-plt.xlabel('Model year')
+plt.title('Diagrama dispersión peso-potencia respecto años 80')
+plt.xlabel('Model year 80')
 plt.ylabel('Weight, Horsepower')
 plt.show()
+#Diferencias entre los dos años:
+#1. En los años 70 los coches tenían un mayor peso y potencia que en los 80
+#2. En los 80, al rededor de 150 no se fabrcó ningún coche con ese peso o potencia
+#3. Pasa lo mismo en los 70 pero al rededor de 400
+#4. Se fabricaron más coches en los 70
