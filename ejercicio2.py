@@ -68,16 +68,61 @@ plt.show()
 
 #5.2.4 Agrupa los datos según estas variables, calculando el tamaño, la mediana y la media para cada grupo:
 'sex''smoker''day''time''size'
-sex = df.groupby('sex').sum()
+
+#sex
+sex = df.groupby('sex').size()
+print('\nTamaño de sex\n')
 print(sex)
+media_sex = df.groupby('sex').mean()
+print('\nMedia de sex\n')
+print(media_sex)
+mediana_sex = df.groupby('sex').median()
+print('\nMediana de sex\n')
+print(mediana_sex)
+
+#smoker
 smoker = df.groupby('smoker').sum()
+print('\nTamaño de smoker\n')
 print(smoker)
+media_smoker = df.groupby('smoker').mean()
+print('\nMedia de smoker\n')
+print(media_smoker)
+mediana_smoker = df.groupby('smoker').median()
+print('\nMediana de smoker\n')
+print(mediana_smoker)
+
+#day
 day = df.groupby('day').sum()
+print('\nTamaño de day\n')
 print(day)
+media_day = df.groupby('day').mean()
+print('\nMedia de day\n')
+print(media_day)
+mediana_day = df.groupby('day').median()
+print('\nMediana de day\n')
+print(mediana_day)
+
+#time
 time = df.groupby('time').sum()
+print('\nTamaño de time\n')
 print(time)
+media_time = df.groupby('time').mean()
+print('\nMedia de time\n')
+print(media_time)
+mediana_time = df.groupby('time').median()
+print('\nMediana de time\n')
+print(mediana_time)
+
+#size
 size = df.groupby('size').sum()
+print('\nTamaño de size\n')
 print(size)
+media_size = df.groupby('size').mean()
+print('\nMedia de size\n')
+print(media_size)
+mediana_size = df.groupby('size').median()
+print('\nMediana de size\n')
+print(mediana_size)
 
 #5.2.5 Dibuja una gráfica que muestre para cada grupo de personas servidas en el restaurante, el promedio de las propinas pagadas.
 #5.2.6 Dibuja una gráfica que muestre la relación entre las variables del dataset, pintando los datos según las siguientes variables:
