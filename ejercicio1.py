@@ -59,6 +59,7 @@ def mapa_corr(df):
     plt.show()
 mapa_corr(df)
 
+
 #5.1.2 ¿Entre qué conjunto de variables se puede considerar que hay una relación?
 #Para que sean linealmente dependientes unas variables de otras, su correlación debe ser de 1 o -1. 
 #Los datos que más se aproximan a ellos son: cylinders - weight , cylinders - splacement, weight - splacement, splacement - mpg, clinders - mpg, mpg - weight 
