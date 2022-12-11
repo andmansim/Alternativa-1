@@ -13,30 +13,33 @@ Conseguimos el Dataset de Auto MPG que contiene datos del consumo de combustible
 '''
 #5.1.1
 import pandas as pd
-
+import pylab as plt
+import seaborn as sns
+import numpy as np
 df = pd.read_csv('auto-mpg.csv')
 print(df.head)
 print(df.info())
-
+df_copia = df.copy()
 #transformamos los datos de la columna horsepower de str a int
-'''for i in range(len(df)):
-    print(type(df.horsepower[i]))
-    df.horsepower[i]= float(df.horsepower[i])'''
+for i in range(len(df)):
+    if df.horsepower[i] != '?': 
+        df.horsepower[i]= int(df.horsepower[i])
+    else:
+        df.horsepower[i] = 0
 
-print(df.horsepower[1])
-df = pd.get_dummies(df, drop_first = True)
 print(df.info())
-'''def mapa_corr(websites):
+df = df.drop('car name', axis= 1)
+def mapa_corr(df):
     plt.figure(figsize=(15, 10))
 
     sns.set(style='white')
 
-    mask=np.triu(np.ones_like(websites.corr(), dtype=bool))
+    mask=np.triu(np.ones_like(df.corr(), dtype=bool))
 
     cmap=sns.diverging_palette(0, 10, as_cmap=True)
 
 
-    sns.heatmap(websites.corr(),
+    sns.heatmap(df.corr(),
                mask=mask,
               cmap=cmap,
               center=0,
@@ -44,4 +47,4 @@ print(df.info())
               annot=True,
               linewidths=0.5,
               cbar_kws={'shrink': 0.5})
-mapa_corr(websites)'''
+mapa_corr(df)
