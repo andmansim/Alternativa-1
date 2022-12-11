@@ -153,7 +153,7 @@ def representar1(df, parametro, parametro1):
     plt.show()
     
 representar1(df, 'day', 'sex')
-representar1(df, 'day', 'smokers')
+representar1(df, 'day', 'smoker')
 representar1(df, 'time', 'sex')
 representar1(df, 'size', 'sex')
 
@@ -161,6 +161,8 @@ representar1(df, 'size', 'sex')
 # ¿cuáles serían los factores diferenciadores que más afectan a la cantidad de las proponia recibidas por el 
 # camarero?
 
+#El camarero recibe más propina los hombes, los no fumadores , por la noche, los domingos, los sábados y los grupos de dos 
+#El camarero recibe menos propina por el día, cuando va una persona, los viernes, los fumadores y las mujeres
 
 
 #5.2.8 Calcula el tercer cuartil para la variable 'tip' y filtra todo el dataset según este valor para que el 
