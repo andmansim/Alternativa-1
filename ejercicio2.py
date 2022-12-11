@@ -70,6 +70,7 @@ plt.show()
 'sex''smoker''day''time''size'
 
 #sex
+print('\n')
 sex = df.groupby('sex').size()
 print('\nTamaño de sex\n')
 print(sex)
@@ -80,7 +81,9 @@ mediana_sex = df.groupby('sex').median()
 print('\nMediana de sex\n')
 print(mediana_sex)
 
+
 #smoker
+print('\n')
 smoker = df.groupby('smoker').sum()
 print('\nTamaño de smoker\n')
 print(smoker)
@@ -92,6 +95,7 @@ print('\nMediana de smoker\n')
 print(mediana_smoker)
 
 #day
+print('\n')
 day = df.groupby('day').sum()
 print('\nTamaño de day\n')
 print(day)
@@ -103,6 +107,7 @@ print('\nMediana de day\n')
 print(mediana_day)
 
 #time
+print('\n')
 time = df.groupby('time').sum()
 print('\nTamaño de time\n')
 print(time)
@@ -114,6 +119,7 @@ print('\nMediana de time\n')
 print(mediana_time)
 
 #size
+print('\n')
 size = df.groupby('size').sum()
 print('\nTamaño de size\n')
 print(size)
