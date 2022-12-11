@@ -16,6 +16,10 @@ import pandas as pd
 import pylab as plt
 import seaborn as sns
 import numpy as np
+import warnings
+
+warnings.filterwarnings('ignore')
+
 df = pd.read_csv('auto-mpg.csv')
 print(df.head)
 print(df.info())
@@ -29,6 +33,7 @@ for i in range(len(df)):
 
 print(df.info())
 df = df.drop('car name', axis= 1)
+
 def mapa_corr(df):
     plt.figure(figsize=(15, 10))
 
