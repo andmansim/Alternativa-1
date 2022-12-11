@@ -136,6 +136,16 @@ plt.show()
 #5.2.6 Dibuja una gráfica que muestre la relación entre las variables del dataset, 
 # pintando los datos según las siguientes variables:
 'sex''smoker''day''time''size'
+def representar(df, parametro):
+    sns.scatterplot(x= 'tip', y = 'total_bill', hue= parametro, data = df)
+    plt.show()
+    
+#Todas ellas respecto a total_bill y tip
+representar(df, 'sex')
+representar(df, 'smoker')
+representar(df, 'day')
+representar(df, 'time')
+representar(df, 'size')
 
 
 #5.2.7 Teniendo en cuenta todos los calculos realizados sobre este dataset y las gráficas dibujadas anteriormente, 
