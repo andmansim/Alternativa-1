@@ -59,3 +59,8 @@ mapa_corr(df)
 #5.1.2
 #Para que sean linealmente dependientes unas variables de otras, su correlación debe ser de 1 o -1. 
 #Los datos que más se aproximan a ellos son: cylinders - weight , cylinders - splacement, weight - splacement, splacement - mpg, clinders - mpg, mpg - weight 
+
+#5.1.3
+print(df.corr())
+mapa_corr(df)
+#No hace falta modificar la relación que he dicho antes, dado que me he basado en la matriz de correlación, al ser la mejor gráfica para representar la relación entre todas las variables numéricas
