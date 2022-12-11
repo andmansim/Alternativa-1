@@ -74,14 +74,12 @@ mapa_corr(df)
 #5.1.4 Dibuja un diagrama de dispersión entre el peso y la potencia, 
 # pintando los puntos del gráfico según el número de cilindros.
 print('\nDiagrama de dispersón peso, potencia--------------------------------------------\n')
-print(df.horsepower)
-a = df.groupby('cylinders').sum()
-print(a)
-print(a.weight)
-plt.scatter(x =df.horsepower, y = df.weight)
+#a = df.groupby('cylinders').sum()
+plt.scatter(x =df.cylinders, y = df.weight, color = 'red')
+plt.scatter(x =df.cylinders, y = df.horsepower, color = 'green')
 plt.title('Diagrama dispersión peso-potencia')
-plt.xlabel('Horsepower')
-plt.ylabel('Weight')
+plt.xlabel('Cylinder')
+plt.ylabel('Weight, Horsepower')
 plt.show()
 #5.1.5 Dibuja un diagrama de dispersión entre el peso y la potencia, pintando los puntos del gráfico según el año de fabricación. 
 # Comparando este nuevo gráfico con el anterior, ¿podemos decir qué criterio tiene más capacidad para agrupar los coches o mejor dicho es un factor discriminatorio mayor que el otro?
