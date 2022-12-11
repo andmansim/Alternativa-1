@@ -27,14 +27,15 @@ print(df.info())
 df_copia = df.copy()
 #transformamos los datos de la columna horsepower de str a int
 for i in range(len(df)):
-    if df.horsepower[i] != '?': 
-        df.horsepower[i]= int(df.horsepower[i])
-    else:
+    if df.horsepower[i] == '?':
         df.horsepower[i] = 0
 
 print('\nCambio de tipo de la columna horsepower-----------------------------------\n')
+
+df.horsepower = pd.to_numeric(df.horsepower)
 print(df.info())
 df = df.drop('car name', axis= 1)
+
 
 #mapa de correlación, este muestra la relación entre las variables
 def mapa_corr(df):
