@@ -147,6 +147,15 @@ representar(df, 'day')
 representar(df, 'time')
 representar(df, 'size')
 
+#Entre ellas
+def representar1(df, parametro, parametro1):
+    sns.countplot(x= parametro, hue = parametro1, data = df)
+    plt.show()
+    
+representar1(df, 'day', 'sex')
+representar1(df, 'day', 'smokers')
+representar1(df, 'time', 'sex')
+representar1(df, 'size', 'sex')
 
 #5.2.7 Teniendo en cuenta todos los calculos realizados sobre este dataset y las gráficas dibujadas anteriormente, 
 # ¿cuáles serían los factores diferenciadores que más afectan a la cantidad de las proponia recibidas por el 
