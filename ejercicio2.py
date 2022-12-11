@@ -171,7 +171,7 @@ representar1(df, 'size', 'sex')
 q3 = round(df.tip.quantile(.75), 2)
 print(q3)
 df1 = df[df['tip']>= q3]
-df1.reset_index(inplace = True)
+df1.reset_index(inplace = True, drop = True)
 print(df1.head())
 
 
