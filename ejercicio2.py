@@ -130,7 +130,7 @@ print(mediana_size)
 # el promedio de las propinas pagadas.
 
 fig, ax1 = plt.subplots(figsize=(7,4))
-ax1.bar(mediana_size.index ,mediana_size['total_bill'])
+ax1.bar(media_size.index ,media_size['total_bill'])
 plt.xlabel('Promedio propinas de cada grupo')
 plt.show()
 
