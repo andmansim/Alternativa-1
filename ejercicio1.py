@@ -47,31 +47,17 @@ plt.show()
 
 #5.1.3 Calcula el coeficiente de correlación entre las variables del dataset y dibújalos en una gráfica. 
 # Modifica la respuesta del paso anterior si lo consideras necesario según los coeficientes calculados.
+
 print('\nMatriz de correlación----------------------------------------------------\n')
 #mapa de correlación, este muestra la relación entre las variables
-def mapa_corr(df):
-    plt.figure(figsize=(7, 7))
-    plt.title('Mapa de correlación')
-    sns.set(style='white')
 
-    mask=np.triu(np.ones_like(df.corr(), dtype=bool))
-
-    cmap=sns.diverging_palette(0, 10, as_cmap=True)
-
-
-    sns.heatmap(df.corr(),
-               mask=mask,
-              cmap=cmap,
-              center=0,
-              square=True,
-              annot=True,
-              linewidths=0.5,
-              cbar_kws={'shrink': 0.5})
-    plt.show()
 print(df.corr())
-mapa_corr(df)
+sns.heatmap(df.corr())
+plt.show()
 #Para que sean linealmente dependientes unas variables de otras, su correlación debe ser de 1 o -1., directa e inverda respectivamente. 
-#Los datos que más se aproximan a ellos son: cylinders - weight , cylinders - displacement, weight - displacement, displacement - mpg, cylinders - mpg, mpg - weight 
+#En la relación directa hay que añadir cylinders - weight, cylinders - displacement y quitar la de horsepower - weight
+#En la relación inversa hay que añador cylinder - mpg
+
 
 #5.1.4 Dibuja un diagrama de dispersión entre el peso y la potencia, 
 # pintando los puntos del gráfico según el número de cilindros.
