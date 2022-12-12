@@ -198,4 +198,3 @@ histo(df, 'size')
 #Las recomendaciones al camareron son: Que mande a los grupos de hombres de dos pesonas a la zona de no fumadores. 
 #También que quien recoja las reservas mande a todos al sábado o domingo y que recomende ir a cenar en vez de comer
 
-#Revisar BIEN TODO
