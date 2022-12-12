@@ -37,19 +37,13 @@ print(df.info())
 df = df.drop('car name', axis= 1)
 
 #Representación
-def representar(df, parametro, p1, p2):
-    sns.scatterplot(x= p1, y = p2, hue= parametro, data = df)
-    plt.show()
 
-representar(df, 'cylinders', 'horsepower', 'weight')
-representar(df, 'mpg', 'horsepower', 'weight')
-representar(df, 'acceleration', 'horsepower', 'weight')
-representar(df, 'model year', 'horsepower', 'weight')
-
+sns.pairplot(df, height=1.2)
+plt.show()
 
 #5.1.2 ¿Entre qué conjunto de variables se puede considerar que hay una relación?
-#Para que sean linealmente dependientes unas variables de otras, su correlación debe ser de 1 o -1. 
-#Los datos que más se aproximan a ellos son: cylinders - weight , cylinders - splacement, weight - splacement, splacement - mpg, clinders - mpg, mpg - weight 
+#Variables con relación directa, es decir, linealmente dependientes de manera ascendente: displacement - weight, weight - horsepower, displacement - horsepower
+#Variables con relación inversa, es decir, linealmente dependientes de manera descendente: weight - mpg, mpg - horsepower, mpg - displacement, horsepower - acceleration
 
 #5.1.3 Calcula el coeficiente de correlación entre las variables del dataset y dibújalos en una gráfica. 
 # Modifica la respuesta del paso anterior si lo consideras necesario según los coeficientes calculados.
@@ -76,8 +70,8 @@ def mapa_corr(df):
     plt.show()
 print(df.corr())
 mapa_corr(df)
-#No hace falta modificar la relación que he dicho antes, dado que me he basado en la matriz de correlación, al ser la mejor gráfica para representar la relación entre todas las variables numéricas
-
+#Para que sean linealmente dependientes unas variables de otras, su correlación debe ser de 1 o -1., directa e inverda respectivamente. 
+#Los datos que más se aproximan a ellos son: cylinders - weight , cylinders - displacement, weight - displacement, displacement - mpg, cylinders - mpg, mpg - weight 
 
 #5.1.4 Dibuja un diagrama de dispersión entre el peso y la potencia, 
 # pintando los puntos del gráfico según el número de cilindros.
