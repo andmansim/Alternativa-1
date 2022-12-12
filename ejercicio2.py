@@ -56,10 +56,11 @@ print(df.isnull().sum())
 #Como podemos ver, en principio no hay ningún valor nulo
 
 
-#5.2.3 Clacula qué porcentaje de los clientes que dan propina son hombres y qué porcentaje son mujeres?
-a = df.groupby('sex')['tip'].sum()
-b = round(a.Female/a.sum() * 100, 2) #Porcieto de propina mujeres
-b1 = round(a.Male/a.sum() * 100, 2) #Porcieto de propina mujeres
+#5.2.3 Calcula qué porcentaje de los clientes que dan propina son hombres y qué porcentaje son mujeres?
+df = df[df['tip']>= 0.0]
+a = df.groupby('sex')['tip'].count()
+b = round(a.loc['Female']/a.sum() * 100, 2) #Porcieto de propina mujeres
+b1 = round(a.loc['Male']/a.sum() * 100, 2) #Porcieto de propina mujeres
 c = [b, b1]
 fig, ax = plt.subplots(figsize=(7,4))
 ax.bar(a.index ,c)
