@@ -36,11 +36,28 @@ df.horsepower = pd.to_numeric(df.horsepower)
 print(df.info())
 df = df.drop('car name', axis= 1)
 
+#Representación
+def representar(df, parametro, p1, p2):
+    sns.scatterplot(x= p1, y = p2, hue= parametro, data = df)
+    plt.show()
 
+representar(df, 'cylinders', 'horsepower', 'weight')
+representar(df, 'mpg', 'horsepower', 'weight')
+representar(df, 'acceleration', 'horsepower', 'weight')
+representar(df, 'model year', 'horsepower', 'weight')
+
+
+#5.1.2 ¿Entre qué conjunto de variables se puede considerar que hay una relación?
+#Para que sean linealmente dependientes unas variables de otras, su correlación debe ser de 1 o -1. 
+#Los datos que más se aproximan a ellos son: cylinders - weight , cylinders - splacement, weight - splacement, splacement - mpg, clinders - mpg, mpg - weight 
+
+#5.1.3 Calcula el coeficiente de correlación entre las variables del dataset y dibújalos en una gráfica. 
+# Modifica la respuesta del paso anterior si lo consideras necesario según los coeficientes calculados.
+print('\nMatriz de correlación----------------------------------------------------\n')
 #mapa de correlación, este muestra la relación entre las variables
 def mapa_corr(df):
     plt.figure(figsize=(7, 7))
-    plt.title('Mapa de correalción')
+    plt.title('Mapa de correlación')
     sns.set(style='white')
 
     mask=np.triu(np.ones_like(df.corr(), dtype=bool))
@@ -57,16 +74,6 @@ def mapa_corr(df):
               linewidths=0.5,
               cbar_kws={'shrink': 0.5})
     plt.show()
-mapa_corr(df)
-
-
-#5.1.2 ¿Entre qué conjunto de variables se puede considerar que hay una relación?
-#Para que sean linealmente dependientes unas variables de otras, su correlación debe ser de 1 o -1. 
-#Los datos que más se aproximan a ellos son: cylinders - weight , cylinders - splacement, weight - splacement, splacement - mpg, clinders - mpg, mpg - weight 
-
-#5.1.3 Calcula el coeficiente de correlación entre las variables del dataset y dibújalos en una gráfica. 
-# Modifica la respuesta del paso anterior si lo consideras necesario según los coeficientes calculados.
-print('\nMatriz de correlación----------------------------------------------------\n')
 print(df.corr())
 mapa_corr(df)
 #No hace falta modificar la relación que he dicho antes, dado que me he basado en la matriz de correlación, al ser la mejor gráfica para representar la relación entre todas las variables numéricas
